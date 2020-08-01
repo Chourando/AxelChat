@@ -10,7 +10,7 @@ The terms used in this Privacy Policy have the same meanings as in our Terms and
 
 **Information Collection and Use**
 
-For a better experience, while using our Service, I may require you to provide us with certain personally identifiable information, including but not limited to list of live broadcasts, list of banned users, live chat broadcast messages, list of live broadcast moderators, live broadcast super chat events. The information that I request will be retained on your device and is not collected by me in any way.
+For a better experience, while using our Service, I may require you to provide us with certain personally identifiable information, including but not limited to list of live broadcasts, list of banned users, live broadcast chat messages, list of live broadcast moderators, live broadcast super chat events. The information that I request will be retained on your device and is not collected by me in any way.
 
 **Security**
 
