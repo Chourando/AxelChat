@@ -25,11 +25,6 @@ Window {
     property var authorIsChatOwner:   false;
     property var authorChatSponsor:   false;
     property var authorIsVerified:    false;
-    //property time lastUpdateTime;
-    onAuthorNameChanged: {
-        console.log("New name: \"", authorName, "\"");
-        console.log("New url: \"", authorPageUrl, "\"");
-    }
 
     flags: Qt.Dialog |
            Qt.CustomizeWindowHint |
@@ -87,7 +82,6 @@ Window {
                 }
 
                 onClicked: {
-                    console.log("Clicekd!");
                     if (typeof(rootWindow.authorPageUrl) == "object")
                     {
                         Qt.openUrlExternally(rootWindow.authorPageUrl)

@@ -459,13 +459,16 @@ ApplicationWindow {
                             return;
                         }
 
-                        if (typeof(root.authorInfoWindow) == "undefined")
+                        if (typeof(root.authorInfoWindow) != "undefined")
                         {
-                            var component = Qt.createComponent("qrc:/author_info_window.qml");
-                            root.authorInfoWindow = component.createObject(root);
+                            root.authorInfoWindow.destroy();
                         }
 
-                        console.log("TRY: \"", authorName, "\"");
+                        var component = Qt.createComponent("qrc:/author_info_window.qml");
+                        root.authorInfoWindow = component.createObject(root);
+
+                        root.authorInfoWindow.close();
+
                         root.authorInfoWindow.authorName      = authorName;
                         root.authorInfoWindow.authorAvatarUrl = authorAvatarUrl;
                         root.authorInfoWindow.authorPageUrl   = authorPageUrl;
