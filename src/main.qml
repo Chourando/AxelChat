@@ -459,8 +459,11 @@ ApplicationWindow {
                             return;
                         }
 
+                        var posX, posY;
                         if (typeof(root.authorInfoWindow) != "undefined")
                         {
+                            posX = root.authorInfoWindow.x;
+                            posY = root.authorInfoWindow.y;
                             root.authorInfoWindow.destroy();
                         }
 
@@ -478,8 +481,13 @@ ApplicationWindow {
                         root.authorInfoWindow.authorChatSponsor   = authorChatSponsor;
                         root.authorInfoWindow.authorIsVerified    = authorIsVerified;
 
+                        if (typeof(posX) != "undefined")
+                        {
+                            root.authorInfoWindow.x = posX;
+                            root.authorInfoWindow.y = posY;
+                        }
+
                         root.authorInfoWindow.show();
-                        root.authorInfoWindow.raise();
                     }
                 }
             }

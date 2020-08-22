@@ -41,14 +41,14 @@ Window {
     width: rootScrollView.contentWidth
     height: rootScrollView.contentHeight
     minimumWidth:  380
-    minimumHeight: 200
+    minimumHeight: 240
 
     color: Material.background
 
     ScrollView {
         id: rootScrollView
         contentWidth:  380
-        contentHeight: 200
+        contentHeight: 240
         width: rootWindow.width
         height: rootWindow.height
         Item {
@@ -72,6 +72,10 @@ Window {
                 x: 8
                 y: 78
                 text: qsTr("Go To Channel")
+                anchors.bottom: parent.bottom
+                anchors.bottomMargin: 6
+                anchors.right: parent.right
+                anchors.rightMargin: 6
                 icon.source: "qrc:/resources/images/forward-arrow.svg"
                 highlighted: true
                 MouseArea {
@@ -100,7 +104,7 @@ Window {
                 anchors.rightMargin: 6
                 anchors.right: parent.right
                 text: typeof(rootWindow.authorName) == "string" ? rootWindow.authorName : ""
-                /*color: {
+                color: {
                     if (authorIsChatOwner)
                     {
                         return "#FFD90F";
@@ -126,10 +130,43 @@ Window {
                     authorChatModerator |
                     authorIsChatOwner   |
                     authorChatSponsor   |
-                    authorIsVerified*/
+                    authorIsVerified
                 selectByMouse: true
                 readOnly: true
                 wrapMode: Text.Wrap
+            }
+
+            Label {
+                id: labelAuthorType
+                x: 8
+                y: 78
+                text: {
+                    if (!authorChatModerator &&
+                            !authorIsChatOwner &&
+                            !authorChatSponsor)
+                    {
+                        return qsTr("Regular Participant");
+                    }
+
+                    var typeName;
+                    if (authorIsChatOwner)
+                    {
+                        if (typeName.length !== 0) { typeName += ", "; }
+                        typeName = qsTr("Channel Author");
+                    }
+                    if (authorChatModerator)
+                    {
+                        if (typeName.length !== 0) { typeName += ", "; }
+                        typeName = qsTr("Moderator");
+                    }
+                    if (authorChatSponsor)
+                    {
+                        if (typeName.length !== 0) { typeName += ", "; }
+                        typeName = qsTr("Sponsor");
+                    }
+                    return typeName;
+                }
+
             }
         }
     }
@@ -137,6 +174,6 @@ Window {
 
 /*##^##
 Designer {
-    D{i:0;formeditorZoom:1.25}
+    D{i:0;formeditorZoom:1.5}D{i:5;anchors_x:8;anchors_y:78}
 }
 ##^##*/

@@ -124,15 +124,40 @@
 <context>
     <name>author_info_window</name>
     <message>
-        <location filename="author_info_window.qml" line="9"/>
+        <location filename="author_info_window.qml" line="11"/>
         <source>Participant Information</source>
         <translation>Информация об участнике</translation>
     </message>
     <message>
-        <location filename="author_info_window.qml" line="66"/>
+        <location filename="author_info_window.qml" line="74"/>
         <source>Go To Channel</source>
         <oldsource>Channel</oldsource>
         <translation>Перейти на канал</translation>
+    </message>
+    <message>
+        <location filename="author_info_window.qml" line="149"/>
+        <source>Regular Participant</source>
+        <translation>Обычный участник</translation>
+    </message>
+    <message>
+        <location filename="author_info_window.qml" line="156"/>
+        <source>Channel Author</source>
+        <translation>Автор канала</translation>
+    </message>
+    <message>
+        <location filename="author_info_window.qml" line="161"/>
+        <source>Moderator</source>
+        <translation>Модератор</translation>
+    </message>
+    <message>
+        <location filename="author_info_window.qml" line="166"/>
+        <source>Sponsor</source>
+        <translation>Спонсор</translation>
+    </message>
+    <message>
+        <location filename="author_info_window.qml" line="171"/>
+        <source>Verified</source>
+        <translation>Проверенный</translation>
     </message>
 </context>
 <context>
@@ -195,22 +220,22 @@
 <context>
     <name>main</name>
     <message>
-        <location filename="main.qml" line="546"/>
+        <location filename="main.qml" line="550"/>
         <source>Connecting to %1</source>
         <translation>Подключение к %1</translation>
     </message>
     <message>
-        <location filename="main.qml" line="553"/>
+        <location filename="main.qml" line="557"/>
         <source>Link or broadcast ID is not specified</source>
         <translation>Ссылка или ID трансляции не указана</translation>
     </message>
     <message>
-        <location filename="main.qml" line="557"/>
+        <location filename="main.qml" line="561"/>
         <source>Right click on the window to open the settings</source>
         <translation>Кликните правой кнопкой мыши по окну, чтобы открыть настройки</translation>
     </message>
     <message>
-        <location filename="main.qml" line="563"/>
+        <location filename="main.qml" line="567"/>
         <source>Incorrect link or broadcast ID specified</source>
         <oldsource>Incorrect link or broadcast ID entered</oldsource>
         <translation>Указана неверная ссылка или ID трансляции</translation>
@@ -274,7 +299,7 @@
         <translation>Настройки AxelChat</translation>
     </message>
     <message>
-        <location filename="settings.qml" line="76"/>
+        <location filename="settings.qml" line="77"/>
         <source>YouTube</source>
         <translation></translation>
     </message>
@@ -287,22 +312,22 @@
         <translation type="vanished">Участники</translation>
     </message>
     <message>
-        <location filename="settings.qml" line="80"/>
+        <location filename="settings.qml" line="81"/>
         <source>Common</source>
         <translation>Общее</translation>
     </message>
     <message>
-        <location filename="settings.qml" line="92"/>
+        <location filename="settings.qml" line="93"/>
         <source>Chat Commands</source>
         <translation>Команды чата</translation>
     </message>
     <message>
-        <location filename="settings.qml" line="96"/>
+        <location filename="settings.qml" line="97"/>
         <source>Output to Files</source>
         <translation>Вывод в файл</translation>
     </message>
     <message>
-        <location filename="settings.qml" line="100"/>
+        <location filename="settings.qml" line="101"/>
         <source>About AxelChat</source>
         <translation>Об AxelChat</translation>
     </message>
