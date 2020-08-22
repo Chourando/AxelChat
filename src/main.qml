@@ -16,8 +16,8 @@ ApplicationWindow {
     visible: true
     width: 300
     height: 480
-    minimumHeight: 200
-    minimumWidth:  200
+    minimumHeight: 300
+    minimumWidth:  250
     title: Qt.application.name
 
     property bool showTime: true
@@ -25,6 +25,7 @@ ApplicationWindow {
     property color chromoKeyColor: "#000000"//"#008800"//"#1B5F1E"
 
     property var settingsWindow;
+    property var authorInfoWindow;
     property var updatesWindow;
 
     Settings {
@@ -446,13 +447,36 @@ ApplicationWindow {
                     hoverEnabled: authorPageUrl.toString().length !== 0 ? true : false;
                     acceptedButtons: Qt.LeftButton;
                     cursorShape: {
-                        if (authorPageUrl.toString().length !== 0)
+                        if (messageType != ChatMessage.SoftwareNotification && messageType != ChatMessage.TestMessage)
                         {
                             return Qt.PointingHandCursor;
                         }
                     }
+
                     onClicked: {
-                        Qt.openUrlExternally(authorPageUrl)
+                        if (messageType == ChatMessage.SoftwareNotification && messageType != ChatMessage.TestMessage)
+                        {
+                            return;
+                        }
+
+                        if (typeof(root.authorInfoWindow) == "undefined")
+                        {
+                            var component = Qt.createComponent("qrc:/author_info_window.qml");
+                            root.authorInfoWindow = component.createObject(root);
+                        }
+
+                        console.log("TRY: \"", authorName, "\"");
+                        root.authorInfoWindow.authorName      = authorName;
+                        root.authorInfoWindow.authorAvatarUrl = authorAvatarUrl;
+                        root.authorInfoWindow.authorPageUrl   = authorPageUrl;
+
+                        root.authorInfoWindow.authorChatModerator = authorChatModerator;
+                        root.authorInfoWindow.authorIsChatOwner   = authorIsChatOwner;
+                        root.authorInfoWindow.authorChatSponsor   = authorChatSponsor;
+                        root.authorInfoWindow.authorIsVerified    = authorIsVerified;
+
+                        root.authorInfoWindow.show();
+                        root.authorInfoWindow.raise();
                     }
                 }
             }

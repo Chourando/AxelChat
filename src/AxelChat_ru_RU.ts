@@ -48,7 +48,7 @@
 <context>
     <name>QTranslator</name>
     <message>
-        <location filename="chatmessage.cpp" line="52"/>
+        <location filename="chatmessage.cpp" line="53"/>
         <source>Test Message</source>
         <translation>Тестовое сообщение</translation>
     </message>
@@ -122,6 +122,20 @@
     </message>
 </context>
 <context>
+    <name>author_info_window</name>
+    <message>
+        <location filename="author_info_window.qml" line="9"/>
+        <source>Participant Information</source>
+        <translation>Информация об участнике</translation>
+    </message>
+    <message>
+        <location filename="author_info_window.qml" line="66"/>
+        <source>Go To Channel</source>
+        <oldsource>Channel</oldsource>
+        <translation>Перейти на канал</translation>
+    </message>
+</context>
+<context>
     <name>chatcommands</name>
     <message>
         <location filename="setting_pages/chatcommands.qml" line="37"/>
@@ -153,27 +167,27 @@
 <context>
     <name>common</name>
     <message>
-        <location filename="setting_pages/common.qml" line="20"/>
+        <location filename="setting_pages/common.qml" line="21"/>
         <source>Close</source>
         <translation>Закрыть</translation>
     </message>
     <message>
-        <location filename="setting_pages/common.qml" line="25"/>
+        <location filename="setting_pages/common.qml" line="29"/>
         <source>Restart</source>
         <translation>Перезапуск</translation>
     </message>
     <message>
-        <location filename="setting_pages/common.qml" line="40"/>
+        <location filename="setting_pages/common.qml" line="43"/>
         <source>Enabled Hardware Graphics Accelerator</source>
         <translation>Включить аппаратный ускоритель графики</translation>
     </message>
     <message>
-        <location filename="setting_pages/common.qml" line="48"/>
+        <location filename="setting_pages/common.qml" line="54"/>
         <source>Changes will take effect after restarting the program</source>
         <translation>Изменения вступят в силу после перезапуска программы</translation>
     </message>
     <message>
-        <location filename="setting_pages/common.qml" line="57"/>
+        <location filename="setting_pages/common.qml" line="63"/>
         <source>Enable Sound when New Message Received</source>
         <translation>Включить звук при получении нового сообщения</translation>
     </message>
@@ -181,22 +195,22 @@
 <context>
     <name>main</name>
     <message>
-        <location filename="main.qml" line="486"/>
+        <location filename="main.qml" line="546"/>
         <source>Connecting to %1</source>
         <translation>Подключение к %1</translation>
     </message>
     <message>
-        <location filename="main.qml" line="493"/>
+        <location filename="main.qml" line="553"/>
         <source>Link or broadcast ID is not specified</source>
         <translation>Ссылка или ID трансляции не указана</translation>
     </message>
     <message>
-        <location filename="main.qml" line="497"/>
+        <location filename="main.qml" line="557"/>
         <source>Right click on the window to open the settings</source>
         <translation>Кликните правой кнопкой мыши по окну, чтобы открыть настройки</translation>
     </message>
     <message>
-        <location filename="main.qml" line="503"/>
+        <location filename="main.qml" line="563"/>
         <source>Incorrect link or broadcast ID specified</source>
         <oldsource>Incorrect link or broadcast ID entered</oldsource>
         <translation>Указана неверная ссылка или ID трансляции</translation>

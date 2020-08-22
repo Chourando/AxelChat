@@ -30,7 +30,8 @@ Window {
     Material.background : "black"
     //Material.elevation :  "#03A9F4"
     Material.foreground : "#03A9F4"
-    Material.primary :    "#03A9F4"*/
+    Material.primary :    "#03A9F4"
+    color: Material.background*/
 
     width: 790
     height: 480

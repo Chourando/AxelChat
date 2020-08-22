@@ -15,5 +15,6 @@
         <file>my_components/InteractiveWait/InteractiveWait.qml</file>
         <file>setting_pages/common.qml</file>
         <file>my_components/RoundMouseArea.qml</file>
+        <file>author_info_window.qml</file>
     </qresource>
 </RCC>
