@@ -135,29 +135,28 @@
         <translation>Перейти на канал</translation>
     </message>
     <message>
-        <location filename="author_info_window.qml" line="149"/>
+        <location filename="author_info_window.qml" line="148"/>
         <source>Regular Participant</source>
         <translation>Обычный участник</translation>
     </message>
     <message>
-        <location filename="author_info_window.qml" line="156"/>
+        <location filename="author_info_window.qml" line="155"/>
         <source>Channel Author</source>
         <translation>Автор канала</translation>
     </message>
     <message>
-        <location filename="author_info_window.qml" line="161"/>
+        <location filename="author_info_window.qml" line="160"/>
         <source>Moderator</source>
         <translation>Модератор</translation>
     </message>
     <message>
-        <location filename="author_info_window.qml" line="166"/>
+        <location filename="author_info_window.qml" line="165"/>
         <source>Sponsor</source>
         <translation>Спонсор</translation>
     </message>
     <message>
-        <location filename="author_info_window.qml" line="171"/>
         <source>Verified</source>
-        <translation>Проверенный</translation>
+        <translation type="vanished">Проверенный</translation>
     </message>
 </context>
 <context>
@@ -192,50 +191,55 @@
 <context>
     <name>common</name>
     <message>
-        <location filename="setting_pages/common.qml" line="21"/>
+        <location filename="setting_pages/common.qml" line="22"/>
         <source>Close</source>
         <translation>Закрыть</translation>
     </message>
     <message>
-        <location filename="setting_pages/common.qml" line="29"/>
+        <location filename="setting_pages/common.qml" line="30"/>
         <source>Restart</source>
         <translation>Перезапуск</translation>
     </message>
     <message>
-        <location filename="setting_pages/common.qml" line="43"/>
+        <location filename="setting_pages/common.qml" line="44"/>
         <source>Enabled Hardware Graphics Accelerator</source>
         <translation>Включить аппаратный ускоритель графики</translation>
     </message>
     <message>
-        <location filename="setting_pages/common.qml" line="54"/>
+        <location filename="setting_pages/common.qml" line="55"/>
         <source>Changes will take effect after restarting the program</source>
         <translation>Изменения вступят в силу после перезапуска программы</translation>
     </message>
     <message>
-        <location filename="setting_pages/common.qml" line="63"/>
+        <location filename="setting_pages/common.qml" line="64"/>
         <source>Enable Sound when New Message Received</source>
         <translation>Включить звук при получении нового сообщения</translation>
+    </message>
+    <message>
+        <location filename="setting_pages/common.qml" line="78"/>
+        <source>Language</source>
+        <translation>Язык</translation>
     </message>
 </context>
 <context>
     <name>main</name>
     <message>
-        <location filename="main.qml" line="550"/>
+        <location filename="main.qml" line="558"/>
         <source>Connecting to %1</source>
         <translation>Подключение к %1</translation>
     </message>
     <message>
-        <location filename="main.qml" line="557"/>
+        <location filename="main.qml" line="565"/>
         <source>Link or broadcast ID is not specified</source>
         <translation>Ссылка или ID трансляции не указана</translation>
     </message>
     <message>
-        <location filename="main.qml" line="561"/>
+        <location filename="main.qml" line="569"/>
         <source>Right click on the window to open the settings</source>
         <translation>Кликните правой кнопкой мыши по окну, чтобы открыть настройки</translation>
     </message>
     <message>
-        <location filename="main.qml" line="567"/>
+        <location filename="main.qml" line="575"/>
         <source>Incorrect link or broadcast ID specified</source>
         <oldsource>Incorrect link or broadcast ID entered</oldsource>
         <translation>Указана неверная ссылка или ID трансляции</translation>

@@ -111,5 +111,8 @@
         <file>resources/images/tick.svg</file>
         <file>resources/images/forward-arrow.svg</file>
         <file>resources/sound/ui/beep1.wav</file>
+        <file>resources/images/flags/russia.svg</file>
+        <file>resources/images/flags/uk.svg</file>
+        <file>resources/images/flags/usa.svg</file>
     </qresource>
 </RCC>

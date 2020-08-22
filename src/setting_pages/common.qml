@@ -8,6 +8,7 @@ ScrollView {
     contentHeight: 480
     contentWidth: 640
     Item {
+        id: element
         width:  Math.max(root.width, root.contentWidth)
         height: Math.max(root.height, root.contentHeight)
 
@@ -36,10 +37,41 @@ ScrollView {
             }
         }
 
+        ComboBox {
+            id: comboBoxLanguage
+            anchors.left: labelLanguage.right
+            anchors.leftMargin: 8
+            anchors.top: parent.top
+            anchors.topMargin: 8
+            model: ListModel {
+                id: model
+                ListElement { text: "English"; }
+                ListElement { text: "Русский"; }
+            }
+        }
+
+        Image {
+            id: imageLanguageFlag
+            y: 12
+            width: 40
+            height: 40
+            anchors.verticalCenter: comboBoxLanguage.verticalCenter
+            anchors.left: comboBoxLanguage.right
+            anchors.leftMargin: 6
+            mipmap: true
+            fillMode: Image.PreserveAspectFit
+            source: {
+                if (comboBoxLanguage.currentText.toLowerCase() === "english")
+                    return "qrc:/resources/images/flags/usa.svg";
+                if (comboBoxLanguage.currentText.toLowerCase() === "русский")
+                    return "qrc:/resources/images/flags/russia.svg";
+            }
+        }
+
         Switch {
             id: switchEnabledHardwareGraphicsAccelerator
             x: 8
-            y: 8
+            y: 62
             text: qsTr("Enabled Hardware Graphics Accelerator")
 
             Component.onCompleted: {
@@ -59,7 +91,7 @@ ScrollView {
         Switch {
             id: switchEnableSoundNewMessage
             x: 8
-            y: 62
+            y: 116
             text: qsTr("Enable Sound when New Message Received")
 
             Component.onCompleted: {
@@ -70,5 +102,21 @@ ScrollView {
                 chatHandler.enabledSoundNewMessage = checked;
             }
         }
+
+        Label {
+            id: labelLanguage
+            y: 24
+            text: qsTr("Language")
+            anchors.verticalCenter: comboBoxLanguage.verticalCenter
+            anchors.left: parent.left
+            anchors.leftMargin: 8
+        }
+
     }
 }
+
+/*##^##
+Designer {
+    D{i:0;formeditorZoom:1.25}D{i:8;anchors_x:8}D{i:9;anchors_x:206;anchors_y:8}D{i:13;anchors_x:202}
+}
+##^##*/
