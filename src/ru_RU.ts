@@ -135,22 +135,22 @@
         <translation>Перейти на канал</translation>
     </message>
     <message>
-        <location filename="author_info_window.qml" line="148"/>
+        <location filename="author_info_window.qml" line="162"/>
         <source>Regular Participant</source>
         <translation>Обычный участник</translation>
     </message>
     <message>
-        <location filename="author_info_window.qml" line="155"/>
+        <location filename="author_info_window.qml" line="148"/>
         <source>Channel Author</source>
         <translation>Автор канала</translation>
     </message>
     <message>
-        <location filename="author_info_window.qml" line="160"/>
+        <location filename="author_info_window.qml" line="153"/>
         <source>Moderator</source>
         <translation>Модератор</translation>
     </message>
     <message>
-        <location filename="author_info_window.qml" line="165"/>
+        <location filename="author_info_window.qml" line="158"/>
         <source>Sponsor</source>
         <translation>Спонсор</translation>
     </message>
@@ -191,32 +191,32 @@
 <context>
     <name>common</name>
     <message>
-        <location filename="setting_pages/common.qml" line="22"/>
+        <location filename="setting_pages/common.qml" line="24"/>
         <source>Close</source>
         <translation>Закрыть</translation>
     </message>
     <message>
-        <location filename="setting_pages/common.qml" line="30"/>
+        <location filename="setting_pages/common.qml" line="32"/>
         <source>Restart</source>
         <translation>Перезапуск</translation>
     </message>
     <message>
-        <location filename="setting_pages/common.qml" line="44"/>
+        <location filename="setting_pages/common.qml" line="98"/>
         <source>Enabled Hardware Graphics Accelerator</source>
         <translation>Включить аппаратный ускоритель графики</translation>
     </message>
     <message>
-        <location filename="setting_pages/common.qml" line="55"/>
+        <location filename="setting_pages/common.qml" line="19"/>
         <source>Changes will take effect after restarting the program</source>
         <translation>Изменения вступят в силу после перезапуска программы</translation>
     </message>
     <message>
-        <location filename="setting_pages/common.qml" line="64"/>
+        <location filename="setting_pages/common.qml" line="117"/>
         <source>Enable Sound when New Message Received</source>
         <translation>Включить звук при получении нового сообщения</translation>
     </message>
     <message>
-        <location filename="setting_pages/common.qml" line="78"/>
+        <location filename="setting_pages/common.qml" line="131"/>
         <source>Language</source>
         <translation>Язык</translation>
     </message>
@@ -316,19 +316,23 @@
         <translation type="vanished">Участники</translation>
     </message>
     <message>
-        <location filename="settings.qml" line="81"/>
         <source>Common</source>
-        <translation>Общее</translation>
+        <translation type="vanished">Общее</translation>
     </message>
     <message>
-        <location filename="settings.qml" line="93"/>
+        <location filename="settings.qml" line="89"/>
         <source>Chat Commands</source>
         <translation>Команды чата</translation>
     </message>
     <message>
-        <location filename="settings.qml" line="97"/>
+        <location filename="settings.qml" line="93"/>
         <source>Output to Files</source>
         <translation>Вывод в файл</translation>
+    </message>
+    <message>
+        <location filename="settings.qml" line="97"/>
+        <source>Other</source>
+        <translation>Прочее</translation>
     </message>
     <message>
         <location filename="settings.qml" line="101"/>
