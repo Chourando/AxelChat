@@ -233,6 +233,44 @@ ApplicationWindow {
         Rectangle {
             id: messageContent
 
+            function openAuthorWindow()
+            {
+                if (messageType == ChatMessage.SoftwareNotification && messageType != ChatMessage.TestMessage)
+                {
+                    return;
+                }
+
+                var posX, posY;
+                if (typeof(root.authorInfoWindow) != "undefined")
+                {
+                    posX = root.authorInfoWindow.x;
+                    posY = root.authorInfoWindow.y;
+                    root.authorInfoWindow.destroy();
+                }
+
+                var component = Qt.createComponent("qrc:/author_info_window.qml");
+                root.authorInfoWindow = component.createObject(root);
+
+                root.authorInfoWindow.close();
+
+                root.authorInfoWindow.authorName      = authorName;
+                root.authorInfoWindow.authorAvatarUrl = authorAvatarUrl;
+                root.authorInfoWindow.authorPageUrl   = authorPageUrl;
+
+                root.authorInfoWindow.authorChatModerator = authorChatModerator;
+                root.authorInfoWindow.authorIsChatOwner   = authorIsChatOwner;
+                root.authorInfoWindow.authorChatSponsor   = authorChatSponsor;
+                root.authorInfoWindow.authorIsVerified    = authorIsVerified;
+
+                if (typeof(posX) != "undefined")
+                {
+                    root.authorInfoWindow.x = posX;
+                    root.authorInfoWindow.y = posY;
+                }
+
+                root.authorInfoWindow.show();
+            }
+
             width: listMessages.width
             height: Math.max(textEditMessageText.y + textEditMessageText.height, 40)
 
@@ -324,8 +362,17 @@ ApplicationWindow {
                         messageType == ChatMessage.TestMessage
                     font.pointSize: 10
 
-                    selectByKeyboard: true
-                    selectByMouse: true
+                    MouseArea {
+                        anchors.fill: parent
+                        hoverEnabled: true
+                        cursorShape: Qt.PointingHandCursor
+                        onClicked: {
+                            openAuthorWindow();
+                        }
+                    }
+
+                    //selectByKeyboard: true
+                    //selectByMouse: true
                     readOnly: true
                     //style: Text.Outline
                     //styleColor: "black"
@@ -454,40 +501,7 @@ ApplicationWindow {
                     }
 
                     onClicked: {
-                        if (messageType == ChatMessage.SoftwareNotification && messageType != ChatMessage.TestMessage)
-                        {
-                            return;
-                        }
-
-                        var posX, posY;
-                        if (typeof(root.authorInfoWindow) != "undefined")
-                        {
-                            posX = root.authorInfoWindow.x;
-                            posY = root.authorInfoWindow.y;
-                            root.authorInfoWindow.destroy();
-                        }
-
-                        var component = Qt.createComponent("qrc:/author_info_window.qml");
-                        root.authorInfoWindow = component.createObject(root);
-
-                        root.authorInfoWindow.close();
-
-                        root.authorInfoWindow.authorName      = authorName;
-                        root.authorInfoWindow.authorAvatarUrl = authorAvatarUrl;
-                        root.authorInfoWindow.authorPageUrl   = authorPageUrl;
-
-                        root.authorInfoWindow.authorChatModerator = authorChatModerator;
-                        root.authorInfoWindow.authorIsChatOwner   = authorIsChatOwner;
-                        root.authorInfoWindow.authorChatSponsor   = authorChatSponsor;
-                        root.authorInfoWindow.authorIsVerified    = authorIsVerified;
-
-                        if (typeof(posX) != "undefined")
-                        {
-                            root.authorInfoWindow.x = posX;
-                            root.authorInfoWindow.y = posY;
-                        }
-
-                        root.authorInfoWindow.show();
+                        openAuthorWindow();
                     }
                 }
             }
