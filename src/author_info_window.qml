@@ -145,17 +145,17 @@ Window {
                     if (authorIsChatOwner)
                     {
                         if (typeName.length > 0) { typeName += ", "; }
-                        typeName = qsTr("Channel Author");
+                        typeName += qsTr("Channel Author");
                     }
                     if (authorChatModerator)
                     {
                         if (typeName.length > 0) { typeName += ", "; }
-                        typeName = qsTr("Moderator");
+                        typeName += qsTr("Moderator");
                     }
                     if (authorChatSponsor)
                     {
                         if (typeName.length > 0) { typeName += ", "; }
-                        typeName = qsTr("Sponsor");
+                        typeName += qsTr("Sponsor");
                     }
                     if (typeName === "")
                     {
