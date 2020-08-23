@@ -1,5 +1,5 @@
 <RCC>
     <qresource prefix="/">
-        <file>AxelChat_ru_RU.qm</file>
+        <file>ru_RU.qm</file>
     </qresource>
 </RCC>

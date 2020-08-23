@@ -1,6 +1,7 @@
 import QtQuick 2.15
 import QtQuick.Controls 2.15
 import AxelChat.QMLUtils 1.0
+import AxelChat.I18n 1.0
 
 ScrollView {
     id: root
@@ -15,6 +16,7 @@ ScrollView {
         Dialog {
             id: restartDialog
             anchors.centerIn: parent
+            title: qsTr("Changes will take effect after restarting the program");
             modal: true
             footer: DialogButtonBox {
                 Button {
@@ -47,6 +49,27 @@ ScrollView {
                 id: model
                 ListElement { text: "English"; }
                 ListElement { text: "Русский"; }
+            }
+
+            property bool enableForEditing: false
+            Component.onCompleted: {
+                if (i18n.language == "ru")
+                    currentIndex = 1;
+                else
+                    currentIndex = 0;
+                enableForEditing = true;
+            }
+
+            onCurrentIndexChanged: {
+                if (!enableForEditing)
+                {
+                    return;
+                }
+
+                if (currentIndex == 0)
+                    i18n.setLanguage("C");
+                if (currentIndex == 1)
+                    i18n.setLanguage("ru");
             }
         }
 
@@ -83,7 +106,6 @@ ScrollView {
             }
 
             onClicked: {
-                restartDialog.title = qsTr("Changes will take effect after restarting the program");
                 restartDialog.open();
             }
         }

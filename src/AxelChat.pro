@@ -20,6 +20,7 @@ HEADERS += \
     chatmessage.hpp \
     clipboardqml.hpp \
     githubapi.hpp \
+    i18n.hpp \
     outputtofile.hpp \
     qmlutils.hpp \
     types.hpp \
@@ -32,6 +33,7 @@ SOURCES += \
         chatmessage.cpp \
         clipboardqml.cpp \
         githubapi.cpp \
+        i18n.cpp \
         main.cpp \
         outputtofile.cpp \
         qmlutils.cpp \
@@ -43,7 +45,7 @@ RESOURCES += qml.qrc \
     translations.qrc
 
 TRANSLATIONS += \
-    AxelChat_ru_RU.ts
+    ru_RU.ts
 
 RC_FILE = icon.rc
 

@@ -5,6 +5,7 @@
 #include "githubapi.hpp"
 #include "clipboardqml.hpp"
 #include "qmlutils.hpp"
+#include "i18n.hpp"
 
 int main(int argc, char *argv[])
 {
@@ -28,22 +29,9 @@ int main(int argc, char *argv[])
     app.setWindowIcon(QIcon(":/icon.ico"));
 
     //Translations
-    QLocale().setDefault(QLocale::system().name());
-    QString languageTag = QLocale().bcp47Name().toUtf8();
-
-    QTranslator appTranslator;
-    if (languageTag.toLower() == "c" || languageTag.toLower() == "en"){
-        qApp->removeTranslator(&appTranslator);
-    }
-    else if (languageTag == "ru")
-    {
-        if (appTranslator.load(":/AxelChat_ru_RU.qm")){
-            qApp->installTranslator(&appTranslator);
-        }
-        else{
-            qDebug(QString("Can't find application translation: \"%1\"").arg(languageTag).toUtf8());
-        }
-    }
+    I18n::declareQml();
+    I18n* i18n = new I18n(settings, "i18n", nullptr, &app);
+    Q_UNUSED(i18n);
 
     //Settings
     QString settingsPath = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation);
@@ -69,11 +57,13 @@ int main(int argc, char *argv[])
     QQmlApplicationEngine engine;
     qmlUtils->setParent(&engine);
     chatHandler->setParent(&engine);
+    i18n->setQmlApplicationEngine(&engine);
 
     //Clipboard
     ClipboardQml::declareQml();
     ClipboardQml* clipboard = new ClipboardQml(&engine);
 
+    engine.rootContext()->setContextProperty("i18n",               i18n);
     engine.rootContext()->setContextProperty("chatHandler",        chatHandler);
     engine.rootContext()->setContextProperty("youTubeInterceptor", chatHandler->youTubeInterceptor());
     engine.rootContext()->setContextProperty("outputToFile",       chatHandler->outputToFile());
