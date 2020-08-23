@@ -30,7 +30,8 @@ Window {
     Material.background : "black"
     //Material.elevation :  "#03A9F4"
     Material.foreground : "#03A9F4"
-    Material.primary :    "#03A9F4"*/
+    Material.primary :    "#03A9F4"
+    color: Material.background*/
 
     width: 790
     height: 480
@@ -76,10 +77,6 @@ Window {
                         name: qsTr("YouTube")
                         category: "youtube"
                     }
-                    ListElement {
-                        name: qsTr("Common")
-                        category: "common"
-                    }
                     /*ListElement {
                         name: qsTr("Appearance")
                         category: "appearance"
@@ -95,6 +92,10 @@ Window {
                     ListElement {
                         name: qsTr("Output to Files")
                         category: "output_to_files"
+                    }
+                    ListElement {
+                        name: qsTr("Other")
+                        category: "common"
                     }
                     ListElement {
                         name: qsTr("About AxelChat")

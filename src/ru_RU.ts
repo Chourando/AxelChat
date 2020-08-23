@@ -48,7 +48,7 @@
 <context>
     <name>QTranslator</name>
     <message>
-        <location filename="chatmessage.cpp" line="52"/>
+        <location filename="chatmessage.cpp" line="53"/>
         <source>Test Message</source>
         <translation>Тестовое сообщение</translation>
     </message>
@@ -122,6 +122,44 @@
     </message>
 </context>
 <context>
+    <name>author_info_window</name>
+    <message>
+        <location filename="author_info_window.qml" line="11"/>
+        <source>Participant Information</source>
+        <translation>Информация об участнике</translation>
+    </message>
+    <message>
+        <location filename="author_info_window.qml" line="74"/>
+        <source>Go To Channel</source>
+        <oldsource>Channel</oldsource>
+        <translation>Перейти на канал</translation>
+    </message>
+    <message>
+        <location filename="author_info_window.qml" line="162"/>
+        <source>Regular Participant</source>
+        <translation>Обычный участник</translation>
+    </message>
+    <message>
+        <location filename="author_info_window.qml" line="148"/>
+        <source>Channel Author</source>
+        <translation>Автор канала</translation>
+    </message>
+    <message>
+        <location filename="author_info_window.qml" line="153"/>
+        <source>Moderator</source>
+        <translation>Модератор</translation>
+    </message>
+    <message>
+        <location filename="author_info_window.qml" line="158"/>
+        <source>Sponsor</source>
+        <translation>Спонсор</translation>
+    </message>
+    <message>
+        <source>Verified</source>
+        <translation type="vanished">Проверенный</translation>
+    </message>
+</context>
+<context>
     <name>chatcommands</name>
     <message>
         <location filename="setting_pages/chatcommands.qml" line="37"/>
@@ -153,50 +191,55 @@
 <context>
     <name>common</name>
     <message>
-        <location filename="setting_pages/common.qml" line="20"/>
+        <location filename="setting_pages/common.qml" line="24"/>
         <source>Close</source>
         <translation>Закрыть</translation>
     </message>
     <message>
-        <location filename="setting_pages/common.qml" line="25"/>
+        <location filename="setting_pages/common.qml" line="32"/>
         <source>Restart</source>
         <translation>Перезапуск</translation>
     </message>
     <message>
-        <location filename="setting_pages/common.qml" line="40"/>
+        <location filename="setting_pages/common.qml" line="98"/>
         <source>Enabled Hardware Graphics Accelerator</source>
         <translation>Включить аппаратный ускоритель графики</translation>
     </message>
     <message>
-        <location filename="setting_pages/common.qml" line="48"/>
+        <location filename="setting_pages/common.qml" line="19"/>
         <source>Changes will take effect after restarting the program</source>
         <translation>Изменения вступят в силу после перезапуска программы</translation>
     </message>
     <message>
-        <location filename="setting_pages/common.qml" line="57"/>
+        <location filename="setting_pages/common.qml" line="117"/>
         <source>Enable Sound when New Message Received</source>
         <translation>Включить звук при получении нового сообщения</translation>
+    </message>
+    <message>
+        <location filename="setting_pages/common.qml" line="131"/>
+        <source>Language</source>
+        <translation>Язык</translation>
     </message>
 </context>
 <context>
     <name>main</name>
     <message>
-        <location filename="main.qml" line="486"/>
+        <location filename="main.qml" line="558"/>
         <source>Connecting to %1</source>
         <translation>Подключение к %1</translation>
     </message>
     <message>
-        <location filename="main.qml" line="493"/>
+        <location filename="main.qml" line="565"/>
         <source>Link or broadcast ID is not specified</source>
         <translation>Ссылка или ID трансляции не указана</translation>
     </message>
     <message>
-        <location filename="main.qml" line="497"/>
+        <location filename="main.qml" line="569"/>
         <source>Right click on the window to open the settings</source>
         <translation>Кликните правой кнопкой мыши по окну, чтобы открыть настройки</translation>
     </message>
     <message>
-        <location filename="main.qml" line="503"/>
+        <location filename="main.qml" line="575"/>
         <source>Incorrect link or broadcast ID specified</source>
         <oldsource>Incorrect link or broadcast ID entered</oldsource>
         <translation>Указана неверная ссылка или ID трансляции</translation>
@@ -260,7 +303,7 @@
         <translation>Настройки AxelChat</translation>
     </message>
     <message>
-        <location filename="settings.qml" line="76"/>
+        <location filename="settings.qml" line="77"/>
         <source>YouTube</source>
         <translation></translation>
     </message>
@@ -273,22 +316,26 @@
         <translation type="vanished">Участники</translation>
     </message>
     <message>
-        <location filename="settings.qml" line="80"/>
         <source>Common</source>
-        <translation>Общее</translation>
+        <translation type="vanished">Общее</translation>
     </message>
     <message>
-        <location filename="settings.qml" line="92"/>
+        <location filename="settings.qml" line="89"/>
         <source>Chat Commands</source>
         <translation>Команды чата</translation>
     </message>
     <message>
-        <location filename="settings.qml" line="96"/>
+        <location filename="settings.qml" line="93"/>
         <source>Output to Files</source>
         <translation>Вывод в файл</translation>
     </message>
     <message>
-        <location filename="settings.qml" line="100"/>
+        <location filename="settings.qml" line="97"/>
+        <source>Other</source>
+        <translation>Прочее</translation>
+    </message>
+    <message>
+        <location filename="settings.qml" line="101"/>
         <source>About AxelChat</source>
         <translation>Об AxelChat</translation>
     </message>
