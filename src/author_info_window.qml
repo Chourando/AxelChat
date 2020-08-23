@@ -141,28 +141,25 @@ Window {
                 x: 8
                 y: 78
                 text: {
-                    if (!authorChatModerator &&
-                            !authorIsChatOwner &&
-                            !authorChatSponsor)
-                    {
-                        return qsTr("Regular Participant");
-                    }
-
-                    var typeName;
+                    var typeName = "";
                     if (authorIsChatOwner)
                     {
-                        if (typeName.length !== 0) { typeName += ", "; }
+                        if (typeName.length > 0) { typeName += ", "; }
                         typeName = qsTr("Channel Author");
                     }
                     if (authorChatModerator)
                     {
-                        if (typeName.length !== 0) { typeName += ", "; }
+                        if (typeName.length > 0) { typeName += ", "; }
                         typeName = qsTr("Moderator");
                     }
                     if (authorChatSponsor)
                     {
-                        if (typeName.length !== 0) { typeName += ", "; }
+                        if (typeName.length > 0) { typeName += ", "; }
                         typeName = qsTr("Sponsor");
+                    }
+                    if (typeName === "")
+                    {
+                        typeName = qsTr("Regular Participant");
                     }
                     return typeName;
                 }
