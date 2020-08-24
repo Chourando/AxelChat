@@ -7,16 +7,11 @@
 #include <QWebEngineProfile>
 
 YouTubeInterceptor::YouTubeInterceptor(OutputToFile* outputToFile, QSettings* settings, const QString& settingsGroupPath, QObject *parent)
-    : QWebEngineUrlRequestInterceptor(parent)
+    : QWebEngineUrlRequestInterceptor(parent), _outputToFile(outputToFile), _settings(settings), _settingsGroupPath(settingsGroupPath)
 {
-    _outputToFile = outputToFile;
-
-    _settings = settings;
-    _settingsGroupPath = settingsGroupPath;
-
     connect(_manager, &QNetworkAccessManager::finished, this, &YouTubeInterceptor::replyFinished);
 
-    _webPage->setUrlRequestInterceptor(this);
+    _webPage.setUrlRequestInterceptor(this);
 
     if (_settings)
     {
@@ -591,8 +586,7 @@ void YouTubeInterceptor::setLink(QString link)
         qDebug() << "Broadcast URL:" << _youtubeInfo.broadcastURL.toString();
         qDebug() << "Chat URL:" << _youtubeInfo.broadcastChatURL.toString();*/
 
-        _webPage->load(QUrl(_youtubeInfo.broadcastChatUrl));
-        //_webPage->load(QUrl(_broadcastUrl));
+        _webPage.load(QUrl(_youtubeInfo.broadcastChatUrl));
 
         emit linkChanged();
     }

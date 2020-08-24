@@ -1,4 +1,8 @@
+#if defined(AXELCHAT_LIBRARY)
+#include "shared_library_interface.hpp"
+#else
 #include <QApplication>
+#include "constants.hpp"
 #include <QQmlApplicationEngine>
 #include "chathandler.hpp"
 #include <QtWebEngine/QtWebEngine>
@@ -6,15 +10,14 @@
 #include "clipboardqml.hpp"
 #include "qmlutils.hpp"
 #include "i18n.hpp"
-
 int main(int argc, char *argv[])
 {
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
 
-    QApplication::setApplicationName("AxelChat");
-    QApplication::setOrganizationName("Axel_k");
-    QApplication::setOrganizationDomain("https://www.youtube.com/channel/UCujkj8ZgVkscm34GA1Z8wTQ");
-    QApplication::setApplicationVersion("0.8.0");
+    QApplication::setApplicationName(AxelChat::APPLICATION_NAME);
+    QApplication::setOrganizationName(AxelChat::ORGANIZATION_NAME);
+    QApplication::setOrganizationDomain(AxelChat::ORGANIZATION_DOMAIN);
+    QApplication::setApplicationVersion(AxelChat::APPLICATION_VERSION);
 
     QSettings* settings = new QSettings();
 
@@ -22,8 +25,8 @@ int main(int argc, char *argv[])
     QMLUtils::declareQml();
     QMLUtils* qmlUtils = new QMLUtils(settings, "qml_utils");
 
-    QtWebEngine::initialize();
     QApplication app(argc, argv);
+    QtWebEngine::initialize();
 
     //Window icon
     app.setWindowIcon(QIcon(":/icon.ico"));
@@ -85,3 +88,5 @@ int main(int argc, char *argv[])
 
     return returnCode;
 }
+
+#endif

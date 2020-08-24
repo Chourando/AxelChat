@@ -98,7 +98,7 @@ void ChatHandler::onReadyRead(const QList<ChatMessage> &messages, const QList<Me
             /*qDebug(QString("%1: %2")
                    .arg(message.authorName).arg(message.text).toUtf8());*/
 
-            if (message.author().channelId() != MessageAuthor::softwareAuthor().channelId())
+            if (_bot && message.author().channelId() != MessageAuthor::softwareAuthor().channelId())
             {
                 _bot->processMessage(message);
             }

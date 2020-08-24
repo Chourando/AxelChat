@@ -17,7 +17,7 @@ class ChatHandler : public QObject
     Q_PROPERTY(bool enabledSoundNewMessage READ enabledSoundNewMessage WRITE setEnabledSoundNewMessage NOTIFY enabledSoundNewMessageChanged)
 
 public:
-    explicit ChatHandler(QSettings* settings, const QString& settingsGroup, QObject *parent = nullptr);
+    explicit ChatHandler(QSettings* settings, const QString& settingsGroup = "chat_handler", QObject *parent = nullptr);
     ~ChatHandler();
     MessageAuthor authorByChannelId(const QString& channelId) const;
 
@@ -52,7 +52,7 @@ private:
     ChatMessagesModel _messagesModel;
     QMap<QString, MessageAuthor> _authors;
 
-    QString _settingsGroupPath = "chat_handler";
+    QString _settingsGroupPath;
     QSettings*    _settings                 = nullptr;
 
     YouTubeInterceptor* _youTubeInterceptor = nullptr;

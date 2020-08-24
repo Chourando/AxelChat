@@ -94,6 +94,7 @@ Q_DECLARE_METATYPE(MessageAuthor);
 class ChatMessage{
     Q_GADGET
 public:
+    friend class ChatMessagesModel;
     ChatMessage() { }
 
     enum Type
@@ -147,6 +148,10 @@ public:
     {
         _isBotCommand = isBotCommand;
     }
+    inline uint64_t idNum() const
+    {
+        return _idNum;
+    }
 
     bool valid() const;
 
@@ -159,6 +164,7 @@ public:
 private:
     bool _valid = false;
 
+    uint64_t _idNum = 0;
     QString _id;
     QString _text;
 
@@ -207,14 +213,20 @@ public:
     bool contains(const QString& id);
     int rowCount(const QModelIndex &parent) const override;
     QVariant data(const QModelIndex &index, int role) const override;
+    static QVariant dataByRole(const ChatMessage& message, int role);
+    QVariant dataByNumId(const uint64_t &idNum, int role);
     bool removeRows(int position, int rows, const QModelIndex &parent = QModelIndex()) override;
+    uint64_t lastIdNum() const;
 
 private:
     static const QHash<int, QByteArray> _roleNames;
     QList<QVariant*> _data;//*data
     QHash<QString, QVariant*> _dataById;//message_id, *data
     QHash<QVariant*, QString> _idByData;//*data, message_id
+    QHash<uint64_t, QVariant*> _dataByIdNum;//idNum, *data
 
     const int _maxSize  = 10000;
+
+    uint64_t _lastIdNum = 0;
 };
 

@@ -68,7 +68,7 @@ private:
 
     YouTubeInfo _youtubeInfo;
 
-    QWebEnginePage* _webPage = new QWebEnginePage(this);
+    QWebEnginePage _webPage;
 
     const QString _settingsKeyUserSpecifiedLink = "user_specified_link";
 };
