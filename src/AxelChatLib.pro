@@ -1,4 +1,4 @@
-QT += gui quick multimedia webengine webenginewidgets
+QT += multimedia webengine webenginewidgets
 
 CONFIG += c++11
 TEMPLATE = lib
