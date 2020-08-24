@@ -219,14 +219,64 @@ DLLEXPORT const char* axelchat_get_message_text(double id)
     return toOutStr(chatHandler->messagesModel()->dataByNumId(id, ChatMessagesModel::ChatMessageRoles::MessageText).toString());
 }
 
+DLLEXPORT const char* axelchat_get_message_send_time_str(double id)
+{
+    return toOutStr(chatHandler->messagesModel()->dataByNumId(id, ChatMessagesModel::ChatMessageRoles::MessagePublishedAt)
+                    .toDateTime().time().toString("HH:mm:ss.zzz"));
+}
+
+DLLEXPORT const char* axelchat_get_message_received_time_str(double id)
+{
+    return toOutStr(chatHandler->messagesModel()->dataByNumId(id, ChatMessagesModel::ChatMessageRoles::MessageReceivedAt)
+                    .toDateTime().time().toString("HH:mm:ss.zzz"));
+}
+
 DLLEXPORT const char* axelchat_get_message_author_name(double id)
 {
     return toOutStr(chatHandler->messagesModel()->dataByNumId(id, ChatMessagesModel::ChatMessageRoles::AuthorName).toString());
 }
 
+DLLEXPORT const char* axelchat_get_message_author_channel_id(double id)
+{
+    return toOutStr(chatHandler->messagesModel()->dataByNumId(id, ChatMessagesModel::ChatMessageRoles::AuthorChannelId).toString());
+}
+
+DLLEXPORT const char* axelchat_get_message_author_channel_url(double id)
+{
+    return toOutStr(chatHandler->messagesModel()->dataByNumId(id, ChatMessagesModel::ChatMessageRoles::AuthorPageUrl).toString());
+}
+
+DLLEXPORT const char* axelchat_get_message_author_avatar_url(double id)
+{
+    return toOutStr(chatHandler->messagesModel()->dataByNumId(id, ChatMessagesModel::ChatMessageRoles::AuthorAvatarUrl).toString());
+}
+
+DLLEXPORT const char* axelchat_get_message_author_custom_badge_url(double id)
+{
+    return toOutStr(chatHandler->messagesModel()->dataByNumId(id, ChatMessagesModel::ChatMessageRoles::AuthorCustomBadgeUrl).toString());
+}
+
+DLLEXPORT double axelchat_get_message_author_is_owner(double id)
+{
+    return chatHandler->messagesModel()->dataByNumId(id, ChatMessagesModel::ChatMessageRoles::AuthorIsChatOwner).toBool();
+}
+
+DLLEXPORT double axelchat_get_message_author_is_moderator(double id)
+{
+    return chatHandler->messagesModel()->dataByNumId(id, ChatMessagesModel::ChatMessageRoles::AuthorChatModerator).toBool();
+}
+
+DLLEXPORT double axelchat_get_message_author_is_sponsor(double id)
+{
+    return chatHandler->messagesModel()->dataByNumId(id, ChatMessagesModel::ChatMessageRoles::AuthorChatSponsor).toBool();
+}
+
+DLLEXPORT double axelchat_get_message_author_is_verified(double id)
+{
+    return chatHandler->messagesModel()->dataByNumId(id, ChatMessagesModel::ChatMessageRoles::AuthorIsVerified).toBool();
+}
+
 #endif // AXELCHAT_GLOBAL_HPP
-
-
 
 
 /*
@@ -236,20 +286,4 @@ axelchat_get_target_os();//windows, linux, macos, android, ios...
 
 axelchat_get_qt_version();
 
-axelchat_get_messages_count();
-axelchat_get_message_next();
-
-axelchat_get_message_text(message_id);
-axelchat_get_message_time_sending(message_id);
-axelchat_get_message_time_received(message_id);
-
-axelchat_get_message_author_name(message_id);
-axelchat_get_message_author_youtube_channel_id(message_id);
-axelchat_get_message_author_youtube_channel_url(message_id);
-axelchat_get_message_author_avatar_url(message_id);
-axelchat_get_message_author_custom_badge_url(message_id);
-axelchat_get_message_author_is_chat_owner(message_id);
-axelchat_get_message_author_is_chat_moderator(message_id);
-axelchat_get_message_author_is_chat_sponsor(message_id);
-axelchat_get_message_author_is_verified(message_id);
 */

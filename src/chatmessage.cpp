@@ -154,7 +154,7 @@ void ChatMessagesModel::append(const QList<ChatMessage>& messages)
     for (ChatMessage message : messages)
     {
         QVariant* messageData = new QVariant();
-        message._idNum = _lastIdNum + 1;
+        message._idNum = _lastIdNum;
         _lastIdNum++;
 
         messageData->setValue(message);
