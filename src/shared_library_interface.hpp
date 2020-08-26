@@ -26,11 +26,57 @@ const QString ORGANIZATION_NAME   = AxelChat::ORGANIZATION_NAME;
 const QString ORGANIZATION_DOMAIN = AxelChat::ORGANIZATION_DOMAIN;
 bool enableUtf8 = false;
 int ARGC = 0;
-const char* ARGV = "D:/Projects_Qt/AxelChat/release_lib_win32/AxelChatLib.dll";
+const char* ARGV = "";
 
 uint64_t lastReadedIdNum = 0;
 
 ChatHandler* chatHandler = nullptr;
+
+QByteArray convertToGMTagNamed(uint ucs4)
+{
+    if (ucs4 == 0x1F680)
+    {
+        return "<emoji:rocket1>";
+    }
+    else if (ucs4 == 0x263A)
+    {
+        return "<emoji:smile1>";
+    }
+    else if (ucs4 == 0x2639)
+    {
+        return "<emoji:frowning1>";
+    }
+    else
+    {
+        return "<" + QByteArray::number(ucs4) + ">";
+    }
+}
+
+QByteArray convertToGMTag(uint ucs4)
+{
+    return "<" + QByteArray::number(ucs4) + ">";
+}
+
+const char* convertToGMTags(const QString& string)
+{
+    const QVector<uint>& ucs4str = string.toUcs4();
+    QByteArray ba;
+    ba.reserve(ucs4str.count() * 4);
+
+    for (const uint& c : ucs4str)
+    {
+        if (c >= 32u && c <= 126u && c!= 35u && c!= 60u && c!= 62u)
+        {
+            ba += (char)c;
+        }
+        else
+        {
+            ba += convertToGMTag(c);
+        }
+    }
+
+    return ba;
+}
 
 const char* toOutStr(const QString& string)
 {
@@ -40,7 +86,7 @@ const char* toOutStr(const QString& string)
     }
     else
     {
-        return string.toLocal8Bit();
+        return convertToGMTags(string);
     }
 }
 
@@ -50,9 +96,6 @@ using namespace AxelChatLib;
 
 DLLEXPORT double axelchat_start(double enable_utf8)
 {
-    QApplication::setAttribute(Qt::AA_UseSoftwareOpenGL);
-    QApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
-
     AxelChatLib::enableUtf8 = enable_utf8;
     QApplication::setApplicationName(AxelChatLib::APPLICATION_NAME);
     QApplication::setApplicationVersion(AxelChatLib::APPLICATION_VERSION);
@@ -74,6 +117,7 @@ DLLEXPORT double axelchat_stop()
         delete chatHandler;
         chatHandler = nullptr;
     }
+    QApplication::quit();
 
     return 0.0;
 }
